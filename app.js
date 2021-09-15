@@ -23,9 +23,6 @@ function addMovie() {
         return; 
     }
 
-    if (userTypedText in myObject) {
-        return;
-    }
     // Step 2: Create an empty <li></li>
     const li = document.createElement("li"); // <li></li>
 
