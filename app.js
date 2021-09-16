@@ -49,14 +49,15 @@ function addMovie() {
 function movieHistory(userTypedText) {
     if (!(userTypedText in myObject)) {
         myObject[userTypedText] = 1;
-        const li = document.createElement("li");
-        let textNote = document.createTextNode(`${userTypedText} ${myObject[userTypedText]}`)
-        li.appendChild(textNote)
-        History.appendChild(li);
     }
     else {
         myObject[userTypedText] ++;
-
+        document.getElementById("historyLi").remove()
     }
+    const li = document.createElement("li");
+    li.setAttribute("id", "historyLi");
+    let textNote = document.createTextNode(`${userTypedText} ${myObject[userTypedText]}`)
+    li.appendChild(textNote)
+    History.appendChild(li);
     console.log(myObject)
 }
