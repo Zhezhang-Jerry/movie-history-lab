@@ -2,6 +2,7 @@
 const inp = document.querySelector("input");
 const myMovieList = document.querySelector("ul");
 const History = document.getElementById("movieHist");
+const myArray = [];
 const myObject = {};
 
 // Example of a simple function that clears the input after a user types something in
@@ -22,8 +23,10 @@ function addMovie() {
         alert("Please enter the movie name!")
         return; 
     }
-
-    // Step 2: Create an empty <li></li>
+    if (!(myArray.includes(userTypedText))) { 
+        myArray.push(userTypedText)
+        console.log(myArray)
+        // Step 2: Create an empty <li></li>
     const li = document.createElement("li"); // <li></li>
 
     // Step 3: Prepare the text we will insert INTO that li ^...example: Harry Potter
@@ -35,10 +38,12 @@ function addMovie() {
 
     // Step 5: Insert the <li>Harry Potter</li> INTO the <ul>
     myMovieList.appendChild(li);
+}
 
     // Step 6: Call the clearInput function to clear the input field
-    clearInput();
+    clearInput()
     movieHistory(userTypedText);
+
 }
 
 function movieHistory(userTypedText) {
