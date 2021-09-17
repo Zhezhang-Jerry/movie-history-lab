@@ -66,15 +66,6 @@ function filterNames() {
         }
     }
 }
-    // if (!(upperArray.includes(filterValue.toUpperCase()))) {
-    //     document.getElementById(userTypedText).style.display = "none"
-    // }}
-//     let ul = document.getElementById("movie-list");
-//     let li = ul.querySelectorAll("li.movie-list");
-// }
-//     for (let i in myArray) {
-//         let 
-//     }
 
 function movieHistory(userTypedText) {
     if (!(userTypedText in myObject)) {
