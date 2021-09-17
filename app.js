@@ -3,6 +3,7 @@ const inp = document.querySelector("input");
 const myMovieList = document.querySelector("ul");
 const History = document.getElementById("movieHist");
 const myArray = [];
+const upperArray = [];
 const myObject = {};
 
 
@@ -26,26 +27,44 @@ function addMovie() {
     }
     if (!(myArray.includes(userTypedText))) { 
         myArray.push(userTypedText)
+        upperArray.push(userTypedText.toUpperCase())
         console.log(myArray)
         // Step 2: Create an empty <li></li>
-    const li = document.createElement("li"); // <li></li>
-
-    // Step 3: Prepare the text we will insert INTO that li ^...example: Harry Potter
-    const textToInsert = document.createTextNode(userTypedText);
-
-    // Step 4: Insert text into li
-    // <li>Harry Potter </li>
-    li.appendChild(textToInsert);
-
-    // Step 5: Insert the <li>Harry Potter</li> INTO the <ul>
-    myMovieList.appendChild(li);
-}
-
+        const li = document.createElement("li"); // <li></li>
+        li.setAttribute("id", userTypedText)
+        
+        // Step 3: Prepare the text we will insert INTO that li ^...example: Harry Potter
+        const textToInsert = document.createTextNode(userTypedText);
+        
+        // Step 4: Insert text into li
+        // <li>Harry Potter </li>
+        li.appendChild(textToInsert);
+        
+        // Step 5: Insert the <li>Harry Potter</li> INTO the <ul>
+        myMovieList.appendChild(li);
+    }
+    
     // Step 6: Call the clearInput function to clear the input field
     clearInput()
     movieHistory(userTypedText);
-
+    
 }
+
+const filter = document.getElementById("filter")
+filter.addEventListener("keyup", filterNames);
+
+function filterNames() {
+    const userTypedText = inp.value;
+    let filterValue = document.getElementById("filter").value.toUpperCase();
+    if (!(upperArray.includes(filterValue.toUpperCase()))) {
+        document.getElementById(userTypedText).style.display = "none"
+    }}
+//     let ul = document.getElementById("movie-list");
+//     let li = ul.querySelectorAll("li.movie-list");
+// }
+//     for (let i in myArray) {
+//         let 
+//     }
 
 function movieHistory(userTypedText) {
     if (!(userTypedText in myObject)) {
