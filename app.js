@@ -28,7 +28,6 @@ function addMovie() {
     if (!(myArray.includes(userTypedText))) { 
         myArray.push(userTypedText)
         upperArray.push(userTypedText.toUpperCase())
-        console.log(myArray)
         // Step 2: Create an empty <li></li>
         const li = document.createElement("li"); // <li></li>
         li.setAttribute("id", userTypedText)
@@ -55,10 +54,8 @@ filter.addEventListener("keyup", filterNames);
 
 function filterNames() {
     let filterValue = document.getElementById("filter").value.toUpperCase();
-    console.log(filterValue)
     for (let movieName of myArray) {
         if (!(movieName.toUpperCase().includes(filterValue.toUpperCase()))) {
-            console.log(movieName.toUpperCase())
             document.getElementById(movieName).style.display = "none"
         }
         else {
@@ -80,5 +77,4 @@ function movieHistory(userTypedText) {
     let textNote = document.createTextNode(`${userTypedText} ${myObject[userTypedText]}`)
     li.appendChild(textNote)
     History.appendChild(li);
-    console.log(myObject)
 }
