@@ -52,10 +52,10 @@ function movieHistory(userTypedText) {
     }
     else {
         myObject[userTypedText] ++;
-        document.getElementById("historyLi").remove()
+        document.getElementById("hist" + userTypedText).remove()
     }
     const li = document.createElement("li");
-    li.setAttribute("id", "historyLi");
+    li.setAttribute("id", "hist" + userTypedText);
     let textNote = document.createTextNode(`${userTypedText} ${myObject[userTypedText]}`)
     li.appendChild(textNote)
     History.appendChild(li);
