@@ -54,11 +54,21 @@ const filter = document.getElementById("filter")
 filter.addEventListener("keyup", filterNames);
 
 function filterNames() {
-    const userTypedText = inp.value;
     let filterValue = document.getElementById("filter").value.toUpperCase();
-    if (!(upperArray.includes(filterValue.toUpperCase()))) {
-        document.getElementById(userTypedText).style.display = "none"
-    }}
+    console.log(filterValue)
+    for (let movieName of myArray) {
+        if (!(movieName.toUpperCase().includes(filterValue.toUpperCase()))) {
+            console.log(movieName.toUpperCase())
+            document.getElementById(movieName).style.display = "none"
+        }
+        else {
+            document.getElementById(movieName).style.display = ""
+        }
+    }
+}
+    // if (!(upperArray.includes(filterValue.toUpperCase()))) {
+    //     document.getElementById(userTypedText).style.display = "none"
+    // }}
 //     let ul = document.getElementById("movie-list");
 //     let li = ul.querySelectorAll("li.movie-list");
 // }
