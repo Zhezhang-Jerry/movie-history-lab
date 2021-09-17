@@ -5,6 +5,7 @@ const History = document.getElementById("movieHist");
 const myArray = [];
 const myObject = {};
 
+
 // Example of a simple function that clears the input after a user types something in
 function clearInput() {
     inp.value = "";
