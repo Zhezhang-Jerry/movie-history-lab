@@ -47,6 +47,13 @@ function addMovie() {
     clearInput()
     movieHistory(userTypedText);
     
+    window.localStorage.setItem("myMovie", JSON.stringify(myObject))
+}
+
+if (window.localStorage == null) {
+    JSON.parse(window.localStorage.getItem('myMovie'));
+    console.log(JSON.parse(window.localStorage.getItem('myMovie'))
+    )
 }
 
 const filter = document.getElementById("filter")
@@ -74,7 +81,7 @@ function movieHistory(userTypedText) {
     }
     const li = document.createElement("li");
     li.setAttribute("id", "hist" + userTypedText);
-    let textNote = document.createTextNode(`${userTypedText} ${myObject[userTypedText]}`)
+    let textNote = document.createTextNode(`${userTypedText}                   ${myObject[userTypedText]}`)
     li.appendChild(textNote)
     History.appendChild(li);
 }
