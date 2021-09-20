@@ -1,14 +1,29 @@
 .flex {
-    display: block;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .container {
-    height: 90vh;
-  }
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  li:hover {
-    cursor: pointer;
-  }
+.container {
+  height: 90vh;
+}
+
+li:hover {
+  cursor: pointer;
   
+}
+
+li{
+  list-style: none;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
