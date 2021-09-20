@@ -26,7 +26,6 @@ window.onload = function(){
             let textToInsert = document.createTextNode(movieName);
             li.appendChild(textToInsert);
             myMovieList.appendChild(li);
-            console.log(myArray)
         }
     }else {
         myArray = [];
@@ -43,20 +42,10 @@ window.onload = function(){
             <td>${myObject[key]}</td>
             `
             tr.insertAdjacentHTML('afterbegin', rowHtml);
-            console.log(myObject);
         }
     }else{
         myObject = {};
     }
-    // if (window.localStorage != null) {
-    //     for (let movieName of storageMoviearray) {
-    //     let li = document.createElement("li");
-    //     li.setAttribute("id", movieName)
-    //     let textToInsert = document.createTextNode(movieName);
-    //     li.appendChild(textToInsert);
-    //     myMovieList.appendChild(li);
-    //     console.log(storageMoviearray, storageMovieobject)
-    // }}
 }
 
 // Example of a simple function that clears the input after a user types something in
@@ -99,10 +88,6 @@ function addMovie() {
     movieHistory(userTypedText);
 
     window.localStorage.setItem('user1', JSON.stringify(myArray));
-
-    
-    // window.localStorage.setItem("movieArray", JSON.stringify(myArray));
-    // window.localStorage.setItem("movieObject", JSON.stringify(myObject));
 }
 
 // create a filter event listener to filt the input letter
@@ -139,24 +124,7 @@ function movieHistory(userTypedText) {
     <td>${myObject[userTypedText]}</td>
     `
     tr.insertAdjacentHTML('afterbegin', rowHtml);
-    console.log(myObject);
     
     window.localStorage.setItem('user2', JSON.stringify(myObject));
 }
-
-
-// function movieHistory(userTypedText) {
-//     if (!(userTypedText in myObject)) {
-//         myObject[userTypedText] = 1;
-//     }
-//     else {
-//         myObject[userTypedText] ++;
-//         document.getElementById("hist" + userTypedText).remove()
-//     }
-//     const li = document.createElement("li");
-//     li.setAttribute("id", "hist" + userTypedText);
-//     let textNote = document.createTextNode(`${userTypedText}                   ${myObject[userTypedText]}`)
-//     li.appendChild(textNote)
-//     History.appendChild(li);
-// }
 
