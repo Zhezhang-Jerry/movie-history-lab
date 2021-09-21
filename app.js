@@ -94,7 +94,7 @@ const addMovie = () => {
 const filter = document.getElementById("filter")
 filter.addEventListener("keyup", filterNames);
 
-const filterNames = () => {
+function filterNames () {
     let filterValue = document.getElementById("filter").value.toUpperCase();
     for (let movieName of myArray) {
         if (!(movieName.toUpperCase().includes(filterValue.toUpperCase()))) {
