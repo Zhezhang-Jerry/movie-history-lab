@@ -49,17 +49,17 @@ window.onload = function(){
 }
 
 // Example of a simple function that clears the input after a user types something in
-function clearInput() {
+const clearInput = () => {
     inp.value = "";
 }
 
-function clearMovies() {
+const clearMovies = () => {
     // To delete all children of the <ul></ul> (meaning all <li>'s)..we can wipe out the <ul>'s innerHTML
     myMovieList.innerHTML = '';
 }
 
 // This function is executed when the user clicks [ADD MOVIE] button.
-function addMovie() {
+const addMovie = () => {
     // Step 1: Get value of input
     const userTypedText = inp.value;
     if (userTypedText == ""){
@@ -94,7 +94,7 @@ function addMovie() {
 const filter = document.getElementById("filter")
 filter.addEventListener("keyup", filterNames);
 
-function filterNames() {
+const filterNames = () => {
     let filterValue = document.getElementById("filter").value.toUpperCase();
     for (let movieName of myArray) {
         if (!(movieName.toUpperCase().includes(filterValue.toUpperCase()))) {
@@ -108,7 +108,7 @@ function filterNames() {
 
 // when user input a moive name, update the object accordingly, 
 // show under Movie History section, and save to local storage 
-function movieHistory(userTypedText) {
+const movieHistory = (userTypedText) => {
     if (!(userTypedText in myObject)) {
         myObject[userTypedText] = 1;
     }else {
